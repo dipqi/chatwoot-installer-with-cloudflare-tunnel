@@ -15,7 +15,7 @@ exec > >(tee -i "$LOG_FILE") 2>&1
 
 echo -e "${GREEN}==========================================${NC}"
 echo -e "${GREEN} SKRIP INSTALASI CHATWOOT SELF-HOSTED     ${NC}"
-echo -e "${GREEN} v.0.7 (Clean Version)                    ${NC}"
+echo -e "${GREEN} v.0.9 (Clean Version)                    ${NC}"
 echo -e "${GREEN}==========================================${NC}"
 echo ""
 
@@ -64,20 +64,22 @@ GENERATED_PASSWORD=$(openssl rand -base64 24 | tr -dc 'a-zA-Z0-9')
 echo -e "${GREEN}Sedang membuat file .env...${NC}"
 cat <<EOF > .env
 SECRET_KEY_BASE=$GENERATED_SECRET_KEY
+RAILS_ENV=production
+RAILS_MAX_THREADS=5
 FRONTEND_URL=$FRONTEND_URL
-FORCE_SSL=false
-ENABLE_ACCOUNT_SIGNUP=false
-REDIS_URL=redis://redis:6379
-REDIS_PASSWORD=$GENERATED_PASSWORD
 POSTGRES_HOST=postgres
 POSTGRES_USERNAME=postgres
 POSTGRES_PASSWORD=$GENERATED_PASSWORD
-RAILS_ENV=production
-RAILS_MAX_THREADS=5
+REDIS_URL=redis://redis:6379
+REDIS_PASSWORD=$GENERATED_PASSWORD
+FORCE_SSL=false
+ENABLE_ACCOUNT_SIGNUP=false
+DEFAULT_LOCALE=en
 ACTIVE_STORAGE_SERVICE=local
 RAILS_LOG_TO_STDOUT=true
 LOG_LEVEL=info
 LOG_SIZE=500
+MAILER_SENDER_EMAIL=Chatwoot <accounts@chatwoot.com>
 ENABLE_PUSH_RELAY_SERVER=true
 EOF
 
