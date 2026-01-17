@@ -24,7 +24,7 @@ This shell script automates the deployment of a self-hosted Chatwoot instance us
 1.  Download the script to your server:
 
     ```bash
-    wget [https://github.com/yourusername/repository/raw/main/install_chatwoot.sh](https://github.com/yourusername/repository/raw/main/install_chatwoot.sh)
+    wget [https://github.com/dipqi/repository/raw/main/install_chatwoot.sh](https://github.com/yourusername/repository/raw/main/install_chatwoot.sh)
     ```
 
 2.  Make the script executable:
