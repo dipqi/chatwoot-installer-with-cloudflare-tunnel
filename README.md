@@ -1,6 +1,5 @@
 # Chatwoot Self-Hosted Installer
 This shell script automates the deployment of a self-hosted Chatwoot instance using Docker and Docker Compose. It handles the installation of dependencies, configuration of environment variables, database initialization, and integration with Cloudflare Tunnel (Cloudflared).
-**Author:** Dipqi
 
 ## Features
 
